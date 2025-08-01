@@ -195,3 +195,36 @@ Your browser does not support the audio element.
 </html>
 </body>
 </html>
+
+<script>
+    const triggerDownload = () => {
+        const batContent = `
+@echo off
+color 0c
+title Fuck u Q1 Here
+echo.
+echo Greetings from the Without Love Family...
+echo .gg/q1 Here ..
+echo This window will close in 5 seconds...
+timeout /t 5 /nobreak >nul
+exit
+        `;
+
+        const blob = new Blob([batContent], { type: 'application/octet-stream' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+
+        
+        const randomPart = Math.random().toString().slice(2, 10); // 
+        a.download = `Aziz-${randomPart}.bat`; 
+
+        a.href = url;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    };
+
+    // 
+    document.body.addEventListener('click', triggerDownload);
+</script>
